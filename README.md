@@ -143,7 +143,7 @@ their own provider requirements.
 2. Open PowerShell and clone this fork's `feature/fish-audio-windows` branch:
    `git clone --branch feature/fish-audio-windows https://github.com/francisnathanpancho2026-lgtm/OpenJarvis.git`
 3. Enter the folder: `cd OpenJarvis`
-4. Run `.\\setup-windows.ps1` and enter your Fish Audio API key when prompted.
+4. Run `powershell -ExecutionPolicy Bypass -File .\\setup-windows.ps1` and enter your Fish Audio API key when prompted.
    The key is saved only in your Windows user environment, never in this repository.
 5. Start the app with `uv run jarvis` for terminal chat or `uv run jarvis gui`
    for the browser-based GUI. The source GUI requires Node.js 22+.
