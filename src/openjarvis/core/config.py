@@ -1633,8 +1633,8 @@ class SpeechConfig:
     # back to a different backend that backend's own default voice is used.
     # Kokoro IDs: bm_george / bm_lewis (British male), bf_emma / bf_isabella
     # (British female), af_* / am_* (American).
-    tts_backend: str = "kokoro"  # "kokoro", "openai_tts", "cartesia", "elevenlabs"
-    voice_id: str = "bm_george"
+    tts_backend: str = "fish_audio"  # Fish Audio cloud TTS, or local Kokoro fallback
+    voice_id: str = "14129c3e320149449d6bada6862f7338"
     voice_speed: float = 1.0
 
 

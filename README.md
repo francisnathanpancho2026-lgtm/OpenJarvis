@@ -127,6 +127,36 @@ See the [User Guide](https://open-jarvis.github.io/OpenJarvis/user-guide/morning
 
 Full documentation — including Docker deployment, cloud engines, development setup, and tutorials — at **[open-jarvis.github.io/OpenJarvis](https://open-jarvis.github.io/OpenJarvis/)**.
 
+
+## Windows personal build: local AI + Fish Audio voice
+
+This fork adds Fish Audio text-to-speech and selects the supplied voice by default.
+The chat model remains local through OpenJarvis' supported local inference engines;
+Fish Audio is used for speech output only. Claude/Anthropic credentials are not
+needed for normal local chat. Optional research/optimization features may have
+their own provider requirements.
+
+### First-time setup (Windows 10/11)
+
+1. Install [Git for Windows](https://git-scm.com/download/win), [uv](https://docs.astral.sh/uv/getting-started/installation/),
+   and [Node.js 22 or newer](https://nodejs.org/en/download/) if you intend to use the source GUI.
+2. Open PowerShell and clone this fork's `feature/fish-audio-windows` branch:
+   `git clone --branch feature/fish-audio-windows https://github.com/francisnathanpancho2026-lgtm/OpenJarvis.git`
+3. Enter the folder: `cd OpenJarvis`
+4. Run `powershell -ExecutionPolicy Bypass -File .\\setup-windows.ps1` and enter your Fish Audio API key when prompted.
+   The key is saved only in your Windows user environment, never in this repository.
+5. Start the app with `uv run jarvis` for terminal chat or `uv run jarvis gui`
+   for the browser-based GUI. The source GUI requires Node.js 22+.
+
+The configured Fish Audio voice ID is `14129c3e320149449d6bada6862f7338`.
+The setup uses the `s2.1-pro-free` API model for development while Fish Audio
+lists that free tier as available through November 30, 2026; check Fish Audio's
+current pricing before relying on it beyond that date. You can override the
+model with the `FISH_AUDIO_MODEL` environment variable.
+
+For voice input, the desktop speech extra includes local faster-whisper support.
+Fish Audio itself provides speech output, not microphone transcription.
+
 ## Community
 
 - **GitHub:** [github.com/open-jarvis/OpenJarvis](https://github.com/open-jarvis/OpenJarvis)
